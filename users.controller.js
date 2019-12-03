@@ -14,7 +14,7 @@ function echo(req, res, next) {
 	
 	res.status(200).json({ mesaj: 'Sistem çalışıyor..' });
 }
-
+ 
 async function authenticate(req, res, next) {
 
 	const dbSonuc = await dbUtils.query(`select * from kullanici where kullanici_adi =$1 and sifre=$2`,[req.body.kullaniciAdi,req.body.sifre]);
